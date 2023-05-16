@@ -150,18 +150,31 @@ const Splash = () => {
       .fromTo(
         "#about",
         { x: -100, opacity: 0 },
-        {
-          x: 0,
-          opacity: 1,
-          scrollTrigger: {
-            trigger: "#content",
-            start: "top 55%",
-            end: "top 10%",
-            scrub: true,
-          },
-          stagger: 0.25,
-          ease: Expo.easeIn,
-        }
+        innerWidth < 550
+          ? {
+              x: 0,
+              opacity: 1,
+              scrollTrigger: {
+                trigger: "#content",
+                start: "top 60%",
+                end: "top 0%",
+                scrub: true,
+              },
+              stagger: 0.25,
+              ease: Expo.easeIn,
+            }
+          : {
+              x: 0,
+              opacity: 1,
+              scrollTrigger: {
+                trigger: "#content",
+                start: "top 75%",
+                end: "top 45%",
+                scrub: true,
+              },
+              stagger: 0.25,
+              ease: Expo.easeIn,
+            }
       );
   }, [timeline]);
 
@@ -294,7 +307,7 @@ const Splash = () => {
             <span
               // style={{ fontFamily: "Cedarville Cursive" }}
               ref={web}
-              className="text-[#14cf93] mobile:mr-16 md:0 w-[50vw] md:text-[155px] mobile:text-[70px] overflow-hidden"
+              className="text-[#14cf93] mobile:mr-16 md:mr-0 w-[50vw] md:text-[155px] mobile:text-[70px] overflow-hidden"
             >
               Web
             </span>
@@ -317,10 +330,10 @@ const Splash = () => {
             MERN Stack Web & Android Developer
           </p>
           <div className="clear-both"> </div>
-          <div className="bg-[#fcfaf8] pt-32">
+          <div className="bg-[#fcfaf8] mobile:pt-32 md:pt-16">
             <div className="flex mobile:flex-col-reverse md:flex-row items-center justify-evenly">
               <p
-                className="md:mt-0 mobile:mt-80 md:text-start mobile:text-center w-[85%] mobile:text-xl md:text-3xl overflow-hidden"
+                className="md:mt-0 mobile:mt-80 md:text-start mobile:text-center md:w-[25%] mobile:w-[85%] mobile:text-xl md:text-3xl overflow-hidden"
                 id="about"
               >
                 I AM ANEKANT JAIN, I CREATE Unconventional YET FUNCTIONAL &
@@ -332,7 +345,7 @@ const Splash = () => {
                   ref={(element) => {
                     img.current[2] = element;
                   }}
-                  className="w-[51%] absolute rounded-xl cursor-pointer grayscale hover:grayscale-0 transition-all -bottom-72 mobile:left-36 md:-left-4 z-20"
+                  className="md:w-[58%] mobile:w-[51%] absolute rounded-xl cursor-pointer grayscale hover:grayscale-0 transition-all -bottom-72 mobile:left-36 md:-left-4 z-20"
                   src="/bhopalHackathon.jpg"
                   alt=""
                 />
@@ -340,7 +353,7 @@ const Splash = () => {
                   ref={(element) => {
                     img.current[1] = element;
                   }}
-                  className="w-[53%] absolute rounded-xl cursor-pointer grayscale hover:grayscale-0 hover:z-50 transition-all mobile:-bottom-52 mobile:left-20 md:-bottom-44 -left-16 z-10"
+                  className="md:w-[61%] mobile:w-[53%] absolute rounded-xl cursor-pointer grayscale hover:grayscale-0 hover:z-50 transition-all mobile:-bottom-52 mobile:left-20 md:-bottom-44 md:-left-20 z-10"
                   src="/indoreHackathon.jpeg"
                   alt=""
                 />
@@ -348,14 +361,14 @@ const Splash = () => {
                   ref={(element) => {
                     img.current[0] = element;
                   }}
-                  className="w-[55%] absolute rounded-xl cursor-pointer grayscale hover:grayscale-0 hover:z-20 transition-all mobile:-bottom-40 md:-bottom-28 mobile:left-6 md:-left-36 z-0"
+                  className="md:w-[61%] mobile:w-[55%] absolute rounded-xl cursor-pointer grayscale hover:grayscale-0 hover:z-20 transition-all mobile:-bottom-40 md:-bottom-28 mobile:left-6 md:-left-36 z-0"
                   src="/jaipurHackathon.jpeg"
                   alt=""
                 />
               </div>
             </div>
           </div>
-          <p className="mt-20">
+          <p className="pt-20 bg-[#fcfaf8]">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit.
             Dignissimos aperiam delectus eius quas enim, assumenda debitis iusto
             ullam. Error quo laudantium necessitatibus? Quam similique animi
