@@ -24,6 +24,7 @@ const Test1 = () => {
         { opacity: 1, scale: 1, rotate: 0 }
       );
   }, []);
+  
   return (
     <div className="relative h-[100vh] overflow-hidden">
       <div
